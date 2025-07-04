@@ -1,80 +1,81 @@
-# 📦 Projeto: Automação de Envio de Links no WhatsApp Web
+# 🤖 Projeto de Automação WhatsApp com Java
 
-Este projeto realiza a automação do envio de links de uma planilha Excel para um grupo no **WhatsApp Web**, utilizando **Java**, **Selenium WebDriver** e **Apache POI**.
-
----
-
-## 🧰 Tecnologias Utilizadas
-
-| Ferramenta     | Finalidade                             | Logo                                                  |
-|----------------|-----------------------------------------|--------------------------------------------------------|
-| Java 23        | Linguagem de programação principal     | ![Java](https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg) |
-| Selenium       | Automação de navegador                 | ![Selenium](https://raw.githubusercontent.com/devicons/devicon/master/icons/selenium/selenium-original.svg) |
-| Apache POI     | Leitura de arquivos Excel (.xlsx)      | ![Apache POI](https://poi.apache.org/images/project-logo.png) |
-| ChromeDriver   | Driver do navegador Chrome             | ![Chrome](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Google_Chrome_icon_%282011%29.png/600px-Google_Chrome_icon_%282011%29.png) |
+Este projeto é uma automação desenvolvida em **Java + Selenium** que realiza o envio automático de **links diários para grupos ou contatos no WhatsApp Web**, com controle de envio, visualização de imagem, e uma interface gráfica para facilitar a configuração.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🚀 Funcionalidades
 
-com.example.achadosshoope
-│
-├── WhatsAppBoot.java # Classe principal que executa a automação
-├── PlanilhasUtils.java # Utilitário que lê os links do Excel
-├── enviados.txt # Arquivo que armazena os links já enviados
-├── shoop.xlsx # Planilha com os links a serem enviados
-└── webdrivers/
-└── chromedriver.exe # Driver do Chrome
-
-
----
-
-## 🚀 Como Usar
-
-1. **Instale o Java 17+** e configure o `chromedriver.exe` compatível com seu Chrome.
-2. Crie a planilha `shoop.xlsx` com os links na **coluna A (linha 1 para baixo)**.
-3. Execute a classe `WhatsAppBoot.java`.
-4. **Escaneie o QR Code** do WhatsApp Web com seu celular.
-5. O bot enviará **até 20 links não repetidos** para o grupo "Achados".
-6. Os links enviados serão registrados no arquivo `enviados.txt`.
+- ✅ Leitura de links a partir de uma **planilha Excel (.xlsx)**
+- ✅ Envio automático para grupos ou contatos do WhatsApp
+- ✅ Evita envio repetido com base em registro `.txt`
+- ✅ Limite de até **20 links por dia** configurável
+- ✅ Tempo entre envios configurável (ex: a cada 3 minutos)
+- ✅ Aguarda a imagem de pré-visualização antes de enviar
+- ✅ Interface gráfica em **Swing** com opções:
+  - Grupo/Contato de destino
+  - Tempo de envio entre links
+  - Número de links por dia
 
 ---
 
-## ✅ Funcionalidades
+## 🛠️ Tecnologias Utilizadas
 
-- ✅ Leitura da planilha Excel com Apache POI  
-- ✅ Limite de **20 links por dia**
-- ✅ Evita **repetição de links**
-- ✅ Carrega a **prévia (descrição/imagem)** do link no WhatsApp
-- ✅ Registro automático dos links já enviados
-
----
-
-## 📷 Demonstração
-
-### WhatsApp Web com bot ativo:
-
-> *(Exemplo ilustrativo – substitua por screenshot real se quiser)*
-
-![Exemplo WhatsApp Web](https://raw.githubusercontent.com/rafaelalmeidatk/imagens-readme/main/whatsapp-automation.png)
+| Tecnologia | Descrição |
+|------------|-----------|
+| ☕ **Java** | Linguagem principal do projeto |
+| 🧪 **JUnit** | Para testes (caso aplicável) |
+| 🧭 **Selenium WebDriver** | Para controle do navegador |
+| 🌐 **WhatsApp Web** | Plataforma de envio |
+| 📊 **Apache POI** | Leitura de planilhas Excel |
+| 🖥️ **Java Swing** | Criação da interface gráfica |
+| 🧠 **Lógica de automação** | Com controle de estado e persistência |
 
 ---
 
-## ⚠️ Observações
+## 📸 Interface Gráfica
 
-- O envio de mensagens automatizadas no WhatsApp pode violar os **Termos de Uso do WhatsApp**. Use com responsabilidade.
-- O seletor do WhatsApp Web pode mudar com o tempo — verifique o XPath se algo quebrar.
-- Testado no Chrome **v138.0.7204.50** com ChromeDriver correspondente.
+A interface gráfica foi feita com **Java Swing** e permite que você configure:
+
+- Quantidade de links
+- Intervalo entre envios
+- Escolha entre **grupo** ou **contato**
+- Botão para iniciar a automação após escanear o QR Code
+
+*(adicione imagem do app aqui)*  
+`Ex: ![Interface](imgs/interface.png)`
 
 ---
 
-## 📄 Licença
 
-MIT License © [thomasfarias95](https://github.com/thomasfarias95)
 
----
+Instale o Chrome e baixe o ChromeDriver
 
-## ✉️ Contato
+Coloque o arquivo do ChromeDriver na pasta /webdrivers
 
-📧 Email: thomasfarias0995@gmail.com
-🐙 GitHub: [thomasfarias95](https://github.com/thomasfarias95)
+Altere os caminhos dos arquivos (shoop.xlsx e chromedriver.exe) se necessário
+
+Execute WhatsAppBoot.java ou use a interface com WhatsAppInterface.java
+
+Escaneie o QR Code no WhatsApp Web
+
+Assista a mágica acontecer! 🎯
+
+📌 Observações
+Certifique-se que o WhatsApp Web esteja visível no navegador.
+
+A pré-visualização do link só carrega se o WhatsApp conseguir gerar a imagem.
+
+Ainda em desenvolvimento a integração com Telegram.
+
+💡 Próximos Passos
+ Exportar logs de envios com data
+
+ Adicionar suporte ao Telegram via Bot API
+
+ Melhorias visuais com JavaFX (opcional)
+
+🧑‍💻 Autor
+Thomas Farias
+Desenvolvedor e entusiasta em automação | LinkedIn: https://www.linkedin.com/in/thomas-farias-13b865169/
+Projeto feito com dedicação e aprendizado prático.
