@@ -57,6 +57,14 @@ public class WhatsAppBoot {
             campoMensagem.click();
             campoMensagem.sendKeys(link);
 
+            // Espera 4 segundos para a imagem de prévia carregar
+            Thread.sleep(6000);
+
+            // Pressiona ENTER para enviar
+            campoMensagem.sendKeys("\n");
+
+            Thread.sleep(1000);
+
             WebDriverWait previewWait = new WebDriverWait(driver, Duration.ofSeconds(10));
             try {
                 // Aguarda a pré-visualização aparecer
@@ -78,7 +86,8 @@ public class WhatsAppBoot {
 
             campoMensagem.sendKeys("\n");
             salvarLinkEnviado(link);
-            Thread.sleep(1500);
+
+            Thread.sleep(180000);
         }
 
         System.out.println("Links enviados com sucesso!");
